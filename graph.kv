@@ -1,0 +1,34 @@
+#:kivy 1.0.9
+
+<GraphInterface>:
+    node: graph_node
+    toolbar: graph_toolbar
+
+    GraphNode:
+        id: graph_node
+        center: self.parent.center
+
+    GraphToolBar:
+        id: graph_toolbar
+        size: root.width * 2/10, root.height
+        x: root.width * 8/10
+        y: 0
+      
+<GraphToolBar>:
+    size: 10,100
+
+    canvas:
+        Color:
+            rgba: (1,1,1,1)
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+<GraphNode>:
+    size: self.size
+    canvas:
+        Color:
+            rgba: (root.r,1,1,1)
+        Ellipse:
+            pos: self.pos
+            size: self.size
